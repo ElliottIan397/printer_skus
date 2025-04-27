@@ -1,9 +1,13 @@
 export default function handler(req, res) {
   const { text } = req.body;
 
-  // Very basic parsing
-  const modelMatch = text.match(/Printer Model:\s*(.*?)\s*SKU List:/i);
-  const skuMatch = text.match(/SKU List:\s*(.*)/i);
+  if (!text) {
+    return res.status(400).json({ message: "Missing text" });
+  }
+
+  // Updated parsing for real bot output format
+  const modelMatch = text.match(/For your (.*?), I found/);
+  const skuMatch = text.match(/SKUs?: (.*?)(\.|$)/i);
 
   const printerModel = modelMatch ? modelMatch[1].trim() : "";
   const skuList = skuMatch ? skuMatch[1].trim() : "";
