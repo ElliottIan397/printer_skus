@@ -1,0 +1,10 @@
+{
+  "name": "printer-skus",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "api/extractPrinterAndSku.js",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {}
+}
