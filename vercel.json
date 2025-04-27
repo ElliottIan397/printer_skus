@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/extractPrinterAndSku.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/extractPrinterAndSku", "dest": "/api/extractPrinterAndSku.js" }
+  ]
+}
